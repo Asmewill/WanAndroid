@@ -1,20 +1,17 @@
 package com.zlx.module_mine.fragment;
 
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import androidx.constraintlayout.utils.widget.ImageFilterButton;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.zlx.library_aop.checklogin.annotation.CheckLogin;
 import com.zlx.module_base.base_api.res_data.UserInfo;
 import com.zlx.module_base.base_api.util.ApiUtil;
 import com.zlx.module_base.base_fg.BaseFg;
-import com.zlx.module_base.database.MMkvHelper;
 import com.zlx.module_base.constant.RouterFragmentPath;
+import com.zlx.module_base.database.MMkvHelper;
 import com.zlx.module_mine.R;
 import com.zlx.module_mine.R2;
 import com.zlx.module_mine.activity.AboutAuthorAc;
@@ -29,6 +26,7 @@ import com.zlx.module_network.api1.livedata.BaseObserverCallBack;
 import com.zlx.module_network.bean.ApiResponse;
 import com.zlx.widget.waveview.WaveView;
 
+import androidx.constraintlayout.utils.widget.ImageFilterButton;
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -85,6 +83,9 @@ public class MineFg extends BaseFg {
     @Override
     public void onResume() {
         super.onResume();
+        refreshData();
+    }
+    public void refreshData(){
         userInfo = MMkvHelper.getInstance().getUserInfo();
         if (userInfo != null) {
             tvName.setText(userInfo.getUsername());
@@ -94,6 +95,15 @@ public class MineFg extends BaseFg {
             tvMyScore.setText("");
             tvName.setText(R.string.unlogin);
             tvLevel.setVisibility(View.GONE);
+        }
+
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if(isVisibleToUser){
+            refreshData();
         }
     }
 

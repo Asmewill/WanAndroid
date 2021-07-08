@@ -15,10 +15,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.ContextThemeWrapper;
-
 import com.gyf.immersionbar.BarHide;
 import com.gyf.immersionbar.ImmersionBar;
 import com.kingja.loadsir.core.LoadService;
@@ -36,6 +32,9 @@ import com.zlx.module_base.loadsir.EmptyCallback;
 import com.zlx.module_base.loadsir.LoadingCallback;
 import com.zlx.module_base.widget.slideback.SlideBack;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ContextThemeWrapper;
 import butterknife.ButterKnife;
 
 
@@ -342,7 +341,7 @@ public abstract class BaseAc extends AppCompatActivity implements INetView, IAcV
     private DoubleClickExitDetector doubleClickExitDetector;
 
     public boolean isDoubleClickExit() {
-        return false;
+        return true;
     }
 
     @Override

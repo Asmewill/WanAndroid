@@ -53,7 +53,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation project(':library-base')
     implementation project(':library-widget')
-    implementation project(':library-network')
+  //  implementation project(':library-network')
     implementation project(':library-aop')
     annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
     annotationProcessor rootProject.ext.dependencies.arouterCompiler

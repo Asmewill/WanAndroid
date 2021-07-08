@@ -23,7 +23,7 @@ public class MineAc extends BaseAc {
     @Override
     public void beforeOnCreate() {
         super.beforeOnCreate();
-        ApiUtil.getLoginApi().login("zlxx", "111111").observe(this,
+        ApiUtil.getLoginApi().login("Owen666", "abc123").observe(this,
                 new BaseObserver<>(new BaseObserverCallBack<ApiResponse<UserInfo>>() {
                     @Override
                     public void onSuccess(ApiResponse<UserInfo> data) {

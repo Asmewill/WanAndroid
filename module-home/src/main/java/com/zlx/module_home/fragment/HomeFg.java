@@ -5,11 +5,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
@@ -39,6 +34,10 @@ import com.zlx.module_network.util.LogUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -208,6 +207,7 @@ public class HomeFg extends BaseFg {
         if (view.getId()==R.id.topbar){
             header.openTwoLevel(true);
         }else if (view.getId()==R.id.ivSearch){
+             //startActivity(new Intent(getActivity(),SearchAc.class));
             ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(),ivSearch,"search");
             ActivityCompat.startActivity(getActivity(),new Intent(getActivity(), SearchAc.class),activityOptionsCompat.toBundle());
         }

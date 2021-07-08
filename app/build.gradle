@@ -63,7 +63,7 @@ dependencies {
 
     implementation project(':library-base')
     implementation project(':library-widget')
-    implementation project(':library-common')
+   // implementation project(':library-common')
     implementation project(':library-aop')
     if (!isRunModule.toBoolean()) {
         implementation project(':module-home')

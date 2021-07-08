@@ -29,8 +29,9 @@ public class RouterActivityPath {
 
         /**
          * 主页面
+         * path must be start with '/' and contain more than 2 '/'
          */
-        public static final String PAGER_MAIN = MAIN + "/Main";
+        public static final String PAGER_MAIN = MAIN + "/Mainsss";
     }
 
     /**

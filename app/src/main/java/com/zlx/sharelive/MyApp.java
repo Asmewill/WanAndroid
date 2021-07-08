@@ -16,7 +16,6 @@ import org.greenrobot.eventbus.ThreadMode;
  */
 public class MyApp extends BaseApplication {
 
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -29,7 +28,5 @@ public class MyApp extends BaseApplication {
     public void onMessageEvent(Integer event) {
         System.out.println("收到消息" + event.toString());
     }
-
-    ;
 
 }
